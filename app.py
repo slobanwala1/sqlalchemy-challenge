@@ -134,7 +134,7 @@ def tobs():
 def start_date_only(start):
     print("JSON list of min temp, avg temp and max temp for given start date:")
     
-    print("Returning start_date api request...")
+    print("Returning start_date only api request...")
     
     # temp data for last year, grab last date again.
     dates_query = session_link.query(func.max(func.strftime("%Y-%m-%d", measurement.date))).all()
@@ -152,8 +152,28 @@ def start_date_only(start):
     tobs_start_date_list.append({'Temp Observation':'TAVG', 'Temperature': all_temps[0][1]})
     tobs_start_date_list.append({'Temp Observation':'TMAX', 'Temperature': all_temps[0][2]})
     
-    return jsonify("Returning start_date api request...", tobs_start_date_list)
+    return jsonify("Returning start_date only api request...", tobs_start_date_list)
 
+@app.route("/api/v1.0/<start>/<end>")
+def start_end_date(start, end):
+    print("JSON list of min temp, avg temp and max temp for given start date or end date:")
+    
+    print("Returning start_date and end_date api request...")
+    
+    # Use the query we used before but instead of a max or the last date in list we give the end date given
+    # In the url
+    all_temps = session_link.query(func.min(measurement.tobs), func.avg(measurement.tobs), func.max(measurement.tobs)).\
+        filter(measurement.date >= start).filter(measurement.date <= end).all()
+        
+     # create the list and append values like in prev. routes
+    tobs_start_end_date_list = []
+    tobs_start_end_date_dict = {'Start Date:': start, 'End Date': end}
+    tobs_start_end_date_list.append(tobs_start_end_date_dict)
+    tobs_start_end_date_list.append({'Temp Observation':'TMIN', 'Temperature': all_temps[0][0]})
+    tobs_start_end_date_list.append({'Temp Observation':'TAVG', 'Temperature': all_temps[0][1]})
+    tobs_start_end_date_list.append({'Temp Observation':'TMAX', 'Temperature': all_temps[0][2]})
+    
+    return jsonify("Returning start_date and end_date api request...", tobs_start_end_date_list)
 
 # if statement to handle debug and running the application
 if __name__ == "__main__":
