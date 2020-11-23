@@ -135,7 +135,24 @@ def start_date_only(start):
     print("JSON list of min temp, avg temp and max temp for given start date:")
     
     print("Returning start_date api request...")
-    return jsonify("Returning start_date api request...")
+    
+    # temp data for last year, grab last date again.
+    dates_query = session_link.query(func.max(func.strftime("%Y-%m-%d", measurement.date))).all()
+    date_only = dates_query[0][0]
+    
+    # If only start year than we do start date and the everything until the most recent date(date_only)
+    all_temps = session_link.query(func.min(measurement.tobs), func.avg(measurement.tobs), func.max(measurement.tobs)).\
+        filter(measurement.date >= start).filter(measurement.date <= date_only).all()
+    
+    # create the list and append values like in prev. routes
+    tobs_start_date_list = []
+    tobs_start_date_dict = {'Start Date:': start, 'End Date': date_only}
+    tobs_start_date_list.append(tobs_start_date_dict)
+    tobs_start_date_list.append({'Temp Observation':'TMIN', 'Temperature': all_temps[0][0]})
+    tobs_start_date_list.append({'Temp Observation':'TAVG', 'Temperature': all_temps[0][1]})
+    tobs_start_date_list.append({'Temp Observation':'TMAX', 'Temperature': all_temps[0][2]})
+    
+    return jsonify("Returning start_date api request...", tobs_start_date_list)
 
 
 # if statement to handle debug and running the application
