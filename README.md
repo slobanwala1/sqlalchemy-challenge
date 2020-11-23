@@ -30,40 +30,40 @@ It was really interesting to create an sort of api for my analysis because watch
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_paths.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_paths.PNG" width="500">
 
 **< host >/api/v1.0/precipitation** -  dict with date(key), prcp(value), and returns JSON of dict
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_precipitation.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_precipitation.PNG" width="500">
 
 **< host >/api/v1.0/stations** - JSON list of stations
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_stations.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_stations.PNG" width="500">
 
 **< host >/api/v1.0/tobs** - JSON list of temperature observations for prev. year of most active station
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_tobs.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_tobs.PNG" width="500">
 
 **< host >/api/v1.0/< start_date >** - JSON list of min temp, avg temp and max temp for given start date:
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_date_temp_obs.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_date_temp_obs.PNG" width="500">
 
 **< host >/api/v1.0/< start_date >/< end_date >** - JSON list of min temp, avg temp and max temp for given start date or end date
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_End_date_temp_obs.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_End_date_temp_obs.PNG" width="500">
 
 **ERROR HANDLING** - Handle errors for both start date and end date validation, one by one
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Date_Error_Handling.png" width="500">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Date_Error_Handling.PNG" width="500">
