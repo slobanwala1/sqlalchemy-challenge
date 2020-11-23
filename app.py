@@ -22,7 +22,7 @@ import datetime as dt
 # /api/v1.0/<start>/<end> - JSON list of min temp, avg temp and max temp for given start date or end date
 
 # Do the same process as we did in the analysis to create engine and grab the tables
-engine = create_engine("sqlite:///Resources/hawaii.sqlite")
+engine = create_engine("sqlite:///Resources/hawaii.sqlite", connect_args={'check_same_thread': False})
 
 database = automap_base()
 database.prepare(engine, reflect = True)
@@ -136,6 +136,12 @@ def start_date_only(start):
     
     print("Returning start_date only api request...")
     
+    # Make sure dates are valid
+    try:
+        error_check = dt.datetime.strptime(start, "%Y-%m-%d") 
+    except ValueError:
+        return jsonify({"SOURCE":"/api/v1.0/<start_date>","ERROR_INVALID_DATE": start, "VALID_FORMAT":"YYYY-MM-DD"})
+
     # temp data for last year, grab last date again.
     dates_query = session_link.query(func.max(func.strftime("%Y-%m-%d", measurement.date))).all()
     date_only = dates_query[0][0]
@@ -159,6 +165,16 @@ def start_end_date(start, end):
     print("JSON list of min temp, avg temp and max temp for given start date or end date:")
     
     print("Returning start_date and end_date api request...")
+    
+    # Make sure dates are valid
+    try:
+        error_check = dt.datetime.strptime(start, "%Y-%m-%d")
+    except ValueError:
+        return jsonify({"SOURCE":"/api/v1.0/<start_date>/<end_date>","ERROR_INVALID_DATE": start, "VALID_FORMAT":"YYYY-MM-DD"})
+    try: 
+        error_check = dt.datetime.strptime(end, "%Y-%m-%d") 
+    except ValueError:
+        return jsonify({"SOURCE":"/api/v1.0/<start_date>/<end_date>","ERROR_INVALID_DATE": end, "VALID_FORMAT":"YYYY-MM-DD"})
     
     # Use the query we used before but instead of a max or the last date in list we give the end date given
     # In the url
