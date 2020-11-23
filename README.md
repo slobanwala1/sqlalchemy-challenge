@@ -21,3 +21,49 @@ Hawaii does indeed have a very mild temperature throughout the whole year and se
 <img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Temperature_observation_histogram.png" width="681">
 
 Clearly the frequency of temperatures is mostly in the 70s, however yes there is a decent amount of rain/precipitation each year. Just have to make sure to dodge the months that have a lot of rain each year when planning your trip.
+
+### Climate App:
+
+It was really interesting to create an sort of api for my analysis because watching how the app generated and displayed all the data was really awesome. The api had multiple routes, heres a list of them:
+
+**< host >/** - Lists all the paths
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_paths.png" width="500">
+
+**< host >/api/v1.0/precipitation** -  dict with date(key), prcp(value), and returns JSON of dict
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_precipitation.png" width="500">
+
+**< host >/api/v1.0/stations** - JSON list of stations
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_stations.png" width="500">
+
+**< host >/api/v1.0/tobs** - JSON list of temperature observations for prev. year of most active station
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/List_of_tobs.png" width="500">
+
+**< host >/api/v1.0/< start_date >** - JSON list of min temp, avg temp and max temp for given start date:
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_date_temp_obs.png" width="500">
+
+**< host >/api/v1.0/< start_date >/< end_date >** - JSON list of min temp, avg temp and max temp for given start date or end date
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Start_End_date_temp_obs.png" width="500">
+
+**ERROR HANDLING** - Handle errors for both start date and end date validation, one by one
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Date_Error_Handling.png" width="500">
