@@ -14,10 +14,10 @@ Hawaii does indeed have a very mild temperature throughout the whole year and se
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/precipitation_last_12_months.png.PNG" width="681">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/precipitation_last_12_months.png" width="681">
 
 <br>
 <br>
-<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Temperature_observation_histogram.png.PNG" width="681">
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Temperature_observation_histogram.png" width="681">
 
 Clearly the frequency of temperatures is mostly in the 70s, however yes there is a decent amount of rain/precipitation each year. Just have to make sure to dodge the months that have a lot of rain each year when planning your trip.
