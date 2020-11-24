@@ -83,3 +83,7 @@ trip dates shows us that the even the min temp is high 60 degrees F.
 <br>
 <br>
 <img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Daily_normals_graph.png" width="500">
+
+
+All in all it was an interesting analysis, I knew Hawaii was hot but all year long is kind of wild and really interesting. The homework really got me excited to go to Hawaii for vacation
+because of the good weather, just to make sure to avoid precipitation/rainy days. Thanks again for the chance to work on such an interesting homework!
