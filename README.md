@@ -67,3 +67,14 @@ It was really interesting to create an sort of api for my analysis because watch
 <br>
 <br>
 <img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Date_Error_Handling.PNG" width="500">
+
+
+### Bonus:
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Temperature_observation_bar.png" height="681">
+
+<br>
+<br>
+<img src="https://github.com/slobanwala1/sqlalchemy-challenge/blob/main/Images/Daily_normals_graph.png" width="500">
