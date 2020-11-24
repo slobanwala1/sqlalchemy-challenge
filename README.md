@@ -71,9 +71,10 @@ It was really interesting to create an sort of api for my analysis because watch
 
 ### Bonus:
 
-plt.savefig() Loves to hide the axis indicators lots of times however, these plots show us the average temperatures and the min temperatures
-as well as the max temperatures of the days we want to go on vacation. From what it shown it is around the 70 degrees F or more each day, 
-confirming the analysis that Hawaii has very mild and warm/hot temperature year round, with precipitation but even during that its warm/humid.
+plt.savefig() loves to hide the axis indicators lots of times however, these plots show us the average, min, as well as the max temperatures of the days we want to go on vacation. 
+From what is shown it is around the 70 degrees F or more each day, confirming the analysis that Hawaii has very mild and warm/hot temperature year round, with precipitation 
+but even during that its warm/humid. For speciifics the Trip Avg Temp plot shows us the average temperature for the vacation is high 70s almost 80 degrees F. The Daily Normals for 
+trip dates shows us that the even the min temp is high 60 degrees F.
 
 <br>
 <br>
